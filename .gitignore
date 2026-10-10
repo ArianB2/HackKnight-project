@@ -2,3 +2,8 @@
    .venv/
    data/raw/
    *.pem
+.venv/
+data/raw/
+.env
+__pycache__/
+.DS_Store
