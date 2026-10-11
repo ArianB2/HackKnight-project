@@ -4,3 +4,4 @@ scikit-learn
 boto3
 streamlit
 botocore[crt]
+botocore[crt]
