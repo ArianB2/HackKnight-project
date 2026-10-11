@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadAndAppendBaseline",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:GetObjectVersion", "s3:PutObject", "s3:PutObjectRetention"],
+      "Resource": "arn:aws:s3:::BUCKET_NAME/baseline/*"
+    },
+    {
+      "Sid": "UseKmsForBaseline",
+      "Effect": "Allow",
+      "Action": ["kms:GenerateDataKey", "kms:Decrypt"],
+      "Resource": "*",
+      "Condition": {"StringEquals": {"kms:ViaService": "s3.us-east-1.amazonaws.com"}}
+    },
+    {
+      "Sid": "ExplainWithClaudeHaikuOnly",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel"],
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5*",
+        "arn:aws:bedrock:*:*:inference-profile/us.anthropic.claude-haiku-4-5*"
+      ]
+    },
+    {
+      "Sid": "NeverWeakenTheLock",
+      "Effect": "Deny",
+      "Action": [
+        "s3:BypassGovernanceRetention",
+        "s3:DeleteObjectVersion",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutBucketVersioning"
+      ],
+      "Resource": ["arn:aws:s3:::BUCKET_NAME", "arn:aws:s3:::BUCKET_NAME/*"]
+    }
+  ]
+}

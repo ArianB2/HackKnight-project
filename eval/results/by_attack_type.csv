@@ -1,0 +1,7 @@
+Attack type,Planted,Hash chain,Rules only,Isolation Forest (top 1%),Combined risk score
+amount_inflation,12,12,2,0,12
+duplicate_payment,10,0,9,1,4
+fake_vendor,8,0,8,6,8
+inflated_invoice,10,0,5,0,5
+payee_account_change,12,12,12,0,12
+record_deleted,4,4,0,0,4

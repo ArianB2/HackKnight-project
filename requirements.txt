@@ -1,4 +1,5 @@
-   pandas
-   scikit-learn
-   boto3
-   streamlit
+pandas
+numpy
+scikit-learn
+boto3
+streamlit

@@ -1,0 +1,5 @@
+Detector,Flagged,True attacks caught,Precision,Recall
+Hash chain,69,28,0.406,0.5
+Rules only,500,36,0.072,0.643
+Isolation Forest (top 1%),101,7,0.069,0.125
+Combined risk score,148,45,0.304,0.804

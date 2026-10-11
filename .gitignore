@@ -1,9 +1,7 @@
-   .env
-   .venv/
-   data/raw/
-   *.pem
 .venv/
-data/raw/
 .env
+*.pem
+data/raw/
+data/baseline_s3/
 __pycache__/
 .DS_Store
